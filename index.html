@@ -1,63 +1,19 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contatti Galleria 46</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      background-color: #111;
-      color: #f0f0f0;
-      text-align: center;
-      padding: 40px 20px;
-    }
-    img.logo {
-      width: 180px;
-      margin-bottom: 30px;
-    }
-    h1 {
-      font-size: 1.5em;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-    p {
-      margin: 8px 0;
-      font-size: 1em;
-    }
-    a {
-      color: #fca311;
-      text-decoration: none;
-    }
-    .section {
-      margin-top: 30px;
-    }
-    .hours span {
-      display: block;
-      margin: 2px 0;
-    }
-  </style>
-</head>
-<body>
- <img src="logo galleria 46.jpg" alt="Logo Galleria 46" style="display:block; margin: 0 auto 90px auto; height: 150px;">
+# Ricreo il file .vcf dopo il reset dell'ambiente
+vcf_content = """BEGIN:VCARD
+VERSION:3.0
+FN:Galleria 46
+ORG:Galleria 46 Food & Drinks
+TEL:+393312881484
+EMAIL:info@galleria46.it
+ADR:;;Viale del Lavoro 14H;Ponte San Nicolò;;Italy
+NOTE:Orari: Lun–Ven 9:30–01:00, Ven fino alle 03:00. Sab e Dom chiuso.
+URL:https://galleria46.it
+END:VCARD
+"""
 
-  <div class="section">
-    <h1>📍 Come Trovarci</h1>
-    <p>Viale del Lavoro 14H,<br>Ponte San Nicolò, Italy</p>
-    <p><a href="mailto:info@galleria46.it">info@galleria46.it</a></p>
-    <p><a href="tel:+393312881484">+39 331 288 1484</a></p>
-  </div>
+# Salvo il file .vcf
+vcf_path = "/mnt/data/galleria46.vcf"
+with open(vcf_path, "w", encoding="utf-8") as file:
+    file.write(vcf_content)
 
-  <div class="section hours">
-    <h1>🕒 Orari di Apertura</h1>
-    <span>Lunedì: 9:30 – 01:00</span>
-    <span>Martedì: 9:30 – 01:00</span>
-    <span>Mercoledì: 9:30 – 01:00</span>
-    <span>Giovedì: 9:30 – 01:00</span>
-    <span>Venerdì: 9:30 – 03:00</span>
-    <span>Sabato: Chiuso</span>
-    <span>Domenica: Chiuso</span>
-  </div>
-</body>
-</html>
+vcf_path
